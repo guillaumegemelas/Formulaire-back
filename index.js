@@ -40,8 +40,7 @@ app.post("/form", async (req, res) => {
       process.env.DOMAIN_MAILGUN,
       messageData
     );
-    console.log("response>", response);
-    console.log(response);
+    console.log("response 🟢>", response);
     res.status(200).json(response);
   } catch (error) {
     res.status(400).json(error);
