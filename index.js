@@ -19,10 +19,10 @@ const client = mailgun.client({
 });
 
 //route en Get
-// app.get("/", (req, res) => {
-//   console.log("ok");
-//   res.status(200).json({ message: "ok" });
-// });
+app.get("/", (req, res) => {
+  console.log("ok");
+  res.status(200).json({ message: "ok" });
+});
 
 //route en post récupérant un body
 app.post("/form", async (req, res) => {
@@ -46,11 +46,6 @@ app.post("/form", async (req, res) => {
     res.status(400).json(error);
   }
   //   res.json(req.body);
-});
-
-app.get("/", (req, res) => {
-  res.json("Bienvenue sur mon serveur");
-  console.log("ok");
 });
 
 //port 3000
