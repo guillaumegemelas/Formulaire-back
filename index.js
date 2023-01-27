@@ -32,7 +32,7 @@ app.post("/form", async (req, res) => {
     const messageData = {
       from: `${req.body.firstname} ${req.body.lastname} <${req.body.email}>`,
       to: "guillaumegemelas@hotmail.com",
-      subject: `Formulaire JS`,
+      subject: `Formulaire test mail`,
       text: req.body.message,
     };
 
@@ -40,7 +40,7 @@ app.post("/form", async (req, res) => {
       process.env.DOMAIN_MAILGUN,
       messageData
     );
-    console.log("response 🟢>", response);
+    console.log("response 🔵>", response);
     res.status(200).json(response);
   } catch (error) {
     res.status(400).json(error);
