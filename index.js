@@ -14,20 +14,20 @@ app.use(express.json());
 const mailgun = new Mailgun(formData);
 
 const client = mailgun.client({
-  username: "Guillaume",
+  username: "GEMELAS Guillaume",
   key: process.env.API_KEY_MAILGUN,
 });
 
 //route en Get
 app.get("/", (req, res) => {
   console.log("ok");
-  res.status(200).json({ message: "ok" });
+  res.status(200).json({ message: "serveur is up" });
 });
 
 //route en post récupérant un body
 app.post("/form", async (req, res) => {
   //   Le console.log de req.body nous affiche les données qui ont été rentrées dans les inputs (dans le formulaire frontend) :
-
+  console.log(req.body);
   try {
     const messageData = {
       from: `${req.body.firstname} ${req.body.lastname} <${req.body.email}>`,
