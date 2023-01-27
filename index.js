@@ -32,7 +32,7 @@ app.post("/form", async (req, res) => {
     const messageData = {
       from: `${req.body.firstname} ${req.body.lastname} <${req.body.email}>`,
       to: "guillaumegemelas@hotmail.com",
-      subject: `Formulaire test mail`,
+      subject: req.body.subject,
       text: req.body.message,
     };
 
@@ -49,6 +49,6 @@ app.post("/form", async (req, res) => {
 });
 
 //port 3000
-app.listen(process.env.PORT, () => {
+app.listen(3000, () => {
   console.log("Server has started 🤓");
 });
