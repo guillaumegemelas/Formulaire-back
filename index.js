@@ -48,7 +48,7 @@ app.post("/form", async (req, res) => {
   //   res.json(req.body);
 });
 
-//port 3000
+//port 3000 (en local, repasser en 3000)
 app.listen(process.env.PORT, () => {
   console.log("Server has started 🤓");
 });
